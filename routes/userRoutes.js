@@ -3,13 +3,14 @@ const User = require('../models/user');
 
 // GET all users
 router.get('/', async (req, res) => {
-  try {
-    const users = await User.find().populate('thoughts').populate('friends');
-    res.json(users);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+    try {
+      const users = await User.find().populate('thoughts').populate('friends');
+      res.json(users);
+    } catch (err) {
+      console.error("Error fetching users:", err);
+      res.status(500).json({ error: 'Failed to fetch users' });
+    }
+  });
 
 // GET a single user by its _id
 router.get('/:id', async (req, res) => {

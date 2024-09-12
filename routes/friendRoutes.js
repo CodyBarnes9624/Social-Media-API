@@ -51,12 +51,12 @@ router.delete('/:userId/friends/:friendId', async (req, res) => {
 
 
 router.get('/:userID/friends', async (req, res) => {
-    const { userId } = req.params;
-    console.log(`Fetching reactions for thought ID: ${userId}`);
+    const { userID } = req.params;
+    console.log(`Fetching reactions for thought ID: ${userID}`);
     
     try {
        
-        res.send(`Reactions for thought ID: ${userId}`);
+        res.send(`Reactions for thought ID: ${userID}`);
     } catch (error) {
         console.error(error);
         res.status(500).send(error.message);

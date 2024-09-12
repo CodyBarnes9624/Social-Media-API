@@ -24,8 +24,8 @@ const reactionRoutes = require('./routes/reactionRoutes');
 // Use Routes
 app.use('/api/users', userRoutes);
 app.use('/api/thoughts', thoughtRoutes);
-app.use('/api/users', friendRoutes);
-app.use('/api/thoughts', reactionRoutes);
+app.use('/api/friends', friendRoutes);
+app.use('/api/reactions', reactionRoutes);
 
 
 app.listen(PORT, () => {
